@@ -14,7 +14,13 @@ export class ServersComponent implements OnInit {
 
   //event binding and passing data
   //don't forget to put 'Testserver' for 2 way binding example
-  serverName: string = '';
+  serverName: string = 'Testserver';
+
+  //ngIf example
+  serverCreated = false;
+
+  //ngFor example
+  servers = ['Testserver', 'Testserver 2'];
 
   constructor() {
     setTimeout(() => {
@@ -25,15 +31,24 @@ export class ServersComponent implements OnInit {
   ngOnInit(): void {}
 
   //event binding
-  onCreateServer() {
-    this.serverCreationStatus = 'Server was created!';
-  }
-
-  //Final example
   // onCreateServer() {
+  //   this.serverCreationStatus = 'Server was created!';
+  // }
+
+  //Final databinding example
+  // onCreateServer() {
+  //   this.serverCreated = true;
   //   this.serverCreationStatus =
   //     'Server was created! Name is ' + this.serverName;
   // }
+
+  //ngFor example
+  onCreateServer() {
+    this.serverCreated = true;
+    this.servers.push(this.serverName);
+    this.serverCreationStatus =
+      'Server was created! Name is ' + this.serverName;
+  }
 
   //event binding and passing data
   onUpdateServerName(event: any) {
