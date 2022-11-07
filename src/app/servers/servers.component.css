@@ -1,0 +1,12 @@
+.btn {
+  background-color: dodgerblue;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  padding: 0.75em;
+  cursor: pointer;
+}
+
+.btn:disabled {
+  opacity: 0.5;
+}
